@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   customerInterval$ = new Observable((subscriber) => {
     let timesExecuted = 0
     const interval = setInterval(() => {
+      // subscriber.error()
       if (timesExecuted > 3) {
         clearInterval(interval)
         subscriber.complete()
