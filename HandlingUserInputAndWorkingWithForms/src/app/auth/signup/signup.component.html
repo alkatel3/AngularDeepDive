@@ -1,4 +1,4 @@
-<form [formGroup]="form" (onSubmit)="onSubmit()" >
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
   <h2>Welcome on board!</h2>
   <p>We just need a little bit of data from you to get you started 🚀</p>
 
@@ -7,7 +7,7 @@
     <input id="email" type="email" name="email" formControlName="email"/>
   </div>
 
-  <div class="control-row">
+  <div class="control-row" formGroupName="passwords">
     <div class="control">
       <label for="password">Password</label>
       <input
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <fieldset>
+    <fieldset formGroupName="address">
       <legend>Your Address</legend>
 
       <div class="control-row">
