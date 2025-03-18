@@ -1,6 +1,6 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-user-tasks',
@@ -9,9 +9,18 @@ import { ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStat
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
-export class UserTasksComponent{
+export class UserTasksComponent {
   userName = input.required<string>()
   message = input.required<string>();
+  // private activatedRoute = inject(ActivatedRoute)
+
+  // ngOnInit(): void {
+  //   this.activatedRoute.data.subscribe({
+  //     next: data =>{
+  //       console.log(data);        
+  //     }
+  //   })
+  // }
 }
 
 export const resolveUserName: ResolveFn<string> = (activateRoute: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) => {
